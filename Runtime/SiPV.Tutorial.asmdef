@@ -1,0 +1,24 @@
+{
+    "name": "SiPV.Tutorial",
+    "rootNamespace": "",
+    "references": [
+        "SiPV.Config",
+        "SiPV.Debugging",
+        "SiPV.Event",
+        "SiPV.UI",
+        "SiPV.UserData",
+        "SiPV.Utilities",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:21b0c8d1703a94250bfac916590cea4f",
+        "SiPV.Pool"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
