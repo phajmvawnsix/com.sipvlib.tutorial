@@ -1,13 +1,17 @@
 {
   "name": "com.sipvlib.tutorial",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "SiPVLib Tutorial",
   "description": "A node-graph-based in-game tutorial/onboarding sequencing system (TutorialManager/TutorialConfig) with pluggable actions (force-touch, show/hide view, invoke/listen/wait-for events, checkpoints) and branch conditions (UserData, view/UI state, tutorial active/completed), plus an optional Odin-powered Tutorial Graph editor window for authoring flows visually.",
-  "unity": "6000.3",
+  "unity": "2022.3",
   "author": {
     "name": "phajmvawnsix"
   },
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phajmvawnsix/com.sipvlib.tutorial.git"
+  },
   "keywords": [
     "sipvlib",
     "tutorial"
