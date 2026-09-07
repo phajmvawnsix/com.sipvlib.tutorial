@@ -1,6 +1,6 @@
 {
   "name": "com.sipvlib.tutorial",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "SiPVLib Tutorial",
   "description": "A node-graph-based in-game tutorial/onboarding sequencing system (TutorialManager/TutorialConfig) with pluggable actions (force-touch, show/hide view, invoke/listen/wait-for events, checkpoints) and branch conditions (UserData, view/UI state, tutorial active/completed), plus an optional Odin-powered Tutorial Graph editor window for authoring flows visually.",
   "unity": "2022.3",
@@ -17,14 +17,14 @@
     "tutorial"
   ],
   "dependencies": {
-    "com.sipvlib.config": "https://github.com/phajmvawnsix/com.sipvlib.config.git",
-    "com.sipvlib.debugging": "https://github.com/phajmvawnsix/com.sipvlib.debugging.git",
-    "com.sipvlib.event": "https://github.com/phajmvawnsix/com.sipvlib.event.git",
-    "com.sipvlib.pool": "https://github.com/phajmvawnsix/com.sipvlib.pool.git",
-    "com.sipvlib.ui": "https://github.com/phajmvawnsix/com.sipvlib.ui.git",
-    "com.sipvlib.userdata": "https://github.com/phajmvawnsix/com.sipvlib.userdata.git",
-    "com.sipvlib.utilities": "https://github.com/phajmvawnsix/com.sipvlib.utilities.git",
-    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.sipvlib.config": "1.2.3",
+    "com.sipvlib.debugging": "1.1.1",
+    "com.sipvlib.event": "1.1.2",
+    "com.sipvlib.pool": "1.0.3",
+    "com.sipvlib.ui": "1.0.5",
+    "com.sipvlib.userdata": "1.1.3",
+    "com.sipvlib.utilities": "2.0.2",
+    "com.cysharp.unitask": "2.5.11",
     "com.unity.visualscripting": "1.9.11"
   }
 }
