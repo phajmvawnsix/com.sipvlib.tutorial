@@ -1,12 +1,10 @@
 using System;
+using Alchemy.Inspector;
 using Cysharp.Threading.Tasks;
 using SiPVLib.Config;
 using SiPVLib.Debugging;
 using SiPVLib.UI;
 using SiPVLib.UI.Config;
-#if ODIN_INSPECTOR
-using Sirenix.OdinInspector;
-#endif
 using UnityEngine;
 
 namespace SiPVLib.Tutorial.Config.TutorialActions
@@ -40,10 +38,10 @@ namespace SiPVLib.Tutorial.Config.TutorialActions
         [Tooltip("Seconds to wait for a tap before applying onTimeout. 0 = wait forever.")]
         public float softHintDelay;
 
-#if ODIN_INSPECTOR
-        [ShowIf("@softHintDelay > 0")]
-#endif
+        [ShowIf(nameof(HasSoftHintDelay))]
         public HintTimeoutAction onTimeout = HintTimeoutAction.None;
+
+        private bool HasSoftHintDelay => softHintDelay > 0;
 
         public override string InvalidError() =>
             string.IsNullOrWhiteSpace(targetId) ? "[ForceTouch] targetId is empty" : null;

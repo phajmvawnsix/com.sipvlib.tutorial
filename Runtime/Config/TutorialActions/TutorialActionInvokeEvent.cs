@@ -1,8 +1,6 @@
 ﻿using System;
 using SiPVLib.Event;
-#if ODIN_INSPECTOR
-using Sirenix.OdinInspector;
-#endif
+using Alchemy.Inspector;
 
 namespace SiPVLib.Tutorial.Config.TutorialActions
 {
@@ -32,33 +30,28 @@ namespace SiPVLib.Tutorial.Config.TutorialActions
         public string        targetId;
         public EventDataType eventDataType;
         
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)eventDataType & (int)EventDataType.ValueLong) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueLongFlag))]
         public long   valueLong;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)eventDataType & (int)EventDataType.ValueInt) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueIntFlag))]
         public int    valueInt;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)eventDataType & (int)EventDataType.ValueDouble) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueDoubleFlag))]
         public double valueDouble;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)eventDataType & (int)EventDataType.ValueFloat) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueFloatFlag))]
         public float  valueFloat;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)eventDataType & (int)EventDataType.ValueString) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueStringFlag))]
         public string valueString;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)eventDataType & (int)EventDataType.ValueBool) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueBoolFlag))]
         public bool   valueBool;
 
         public override string InvalidError() =>
             string.IsNullOrWhiteSpace(eventName) ? "[InvokeEvent] eventName is empty" : null;
+
+        private bool IsValueLongFlag => eventDataType.HasFlag(EventDataType.ValueLong);
+        private bool IsValueIntFlag => eventDataType.HasFlag(EventDataType.ValueInt);
+        private bool IsValueDoubleFlag => eventDataType.HasFlag(EventDataType.ValueDouble);
+        private bool IsValueFloatFlag => eventDataType.HasFlag(EventDataType.ValueFloat);
+        private bool IsValueStringFlag => eventDataType.HasFlag(EventDataType.ValueString);
+        private bool IsValueBoolFlag => eventDataType.HasFlag(EventDataType.ValueBool);
 
         protected override void OnStart()
         {

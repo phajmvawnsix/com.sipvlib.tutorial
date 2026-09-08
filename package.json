@@ -1,6 +1,6 @@
 {
   "name": "com.sipvlib.tutorial",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "displayName": "SiPVLib Tutorial",
   "description": "A node-graph-based in-game tutorial/onboarding sequencing system (TutorialManager/TutorialConfig) with pluggable actions (force-touch, show/hide view, invoke/listen/wait-for events, checkpoints) and branch conditions (UserData, view/UI state, tutorial active/completed), plus an optional Odin-powered Tutorial Graph editor window for authoring flows visually.",
   "unity": "2022.3",
@@ -25,6 +25,7 @@
     "com.sipvlib.userdata": "1.1.3",
     "com.sipvlib.utilities": "2.0.2",
     "com.cysharp.unitask": "2.5.11",
-    "com.unity.visualscripting": "1.9.11"
+    "com.unity.visualscripting": "1.9.11",
+    "com.annulusgames.alchemy": "2.1.1"
   }
 }

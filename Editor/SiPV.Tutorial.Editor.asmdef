@@ -3,25 +3,19 @@
     "rootNamespace": "",
     "references": [
         "SiPV.Tutorial",
-        "SiPV.Config"
+        "SiPV.Config",
+        "Alchemy",
+        "Alchemy.Editor"
     ],
     "includePlatforms": [
         "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": true,
-    "precompiledReferences": [
-        "Sirenix.OdinInspector.Editor.dll",
-        "Sirenix.Utilities.Editor.dll",
-        "Sirenix.Utilities.dll",
-        "Sirenix.Serialization.dll",
-        "Sirenix.OdinInspector.Attributes.dll"
-    ],
+    "overrideReferences": false,
+    "precompiledReferences": [],
     "autoReferenced": false,
-    "defineConstraints": [
-        "ODIN_INSPECTOR"
-    ],
+    "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
 }

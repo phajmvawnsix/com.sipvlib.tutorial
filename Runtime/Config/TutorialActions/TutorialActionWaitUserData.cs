@@ -2,9 +2,7 @@
 using SiPVLib.Config.Compare;
 using SiPVLib.Event;
 using SiPVLib.UserData;
-#if ODIN_INSPECTOR
-using Sirenix.OdinInspector;
-#endif
+using Alchemy.Inspector;
 
 namespace SiPVLib.Tutorial.Config.TutorialActions
 {
@@ -18,34 +16,20 @@ namespace SiPVLib.Tutorial.Config.TutorialActions
         public string        dataKey;
         public EventDataType dataType;
 
-#if ODIN_INSPECTOR
         [ShowIf(nameof(ShouldSerializeCompareMode))]
-#endif
         public CompareMode compareMode = CompareMode.Equal;
 
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)dataType & (int)EventDataType.ValueLong) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueLongFlag))]
         public long   valueLong;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)dataType & (int)EventDataType.ValueInt) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueIntFlag))]
         public int    valueInt;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)dataType & (int)EventDataType.ValueDouble) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueDoubleFlag))]
         public double valueDouble;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)dataType & (int)EventDataType.ValueFloat) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueFloatFlag))]
         public float  valueFloat;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)dataType & (int)EventDataType.ValueString) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueStringFlag))]
         public string valueString;
-#if ODIN_INSPECTOR
-        [ShowIf("@(((int)dataType & (int)EventDataType.ValueBool) != 0)")]
-#endif
+        [ShowIf(nameof(IsValueBoolFlag))]
         public bool   valueBool;
 
         public override string InvalidError() =>
@@ -73,6 +57,13 @@ namespace SiPVLib.Tutorial.Config.TutorialActions
         }
 
         private bool ShouldSerializeCompareMode => TutorialValueMatch.HasComparableValue(dataType);
+
+        private bool IsValueLongFlag => dataType.HasFlag(EventDataType.ValueLong);
+        private bool IsValueIntFlag => dataType.HasFlag(EventDataType.ValueInt);
+        private bool IsValueDoubleFlag => dataType.HasFlag(EventDataType.ValueDouble);
+        private bool IsValueFloatFlag => dataType.HasFlag(EventDataType.ValueFloat);
+        private bool IsValueStringFlag => dataType.HasFlag(EventDataType.ValueString);
+        private bool IsValueBoolFlag => dataType.HasFlag(EventDataType.ValueBool);
 
 #if UNITY_EDITOR
         public override string EditorSummary => dataKey;
